@@ -7,7 +7,7 @@ export const SCENE = {
     INSTRUMENT_SELECT: 'instrument_select',
     GAME: 'game',
     GAME_OVER: 'game_over',
-    VOLUME_SETTINGS: 'volume_settings', // ★追加
+    SETTINGS: 'settings',
 };
 
 export const FONT_FAMILY = 'Arial';

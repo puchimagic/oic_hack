@@ -320,35 +320,14 @@ export class GameScene {
                 
                 // ゲームパッド選択時は楽器音を鳴らさない
                 if (this.game.inputMethod !== 'gamepad') {
-                    // 足場が生成されたときに音を鳴らす
-                    if (this.instrumentName === 'ピアノ') {
-                        const availableTracks = KEYBOARD_INSTRUMENT_CONFIG[this.instrumentName].keys.length;
-                        const numSoundsToPlay = requiredKeys.length;
-                        if (availableTracks >= numSoundsToPlay) {
-                            const startIndex = Math.floor(Math.random() * (availableTracks - numSoundsToPlay + 1));
-                            for (let i = 0; i < numSoundsToPlay; i++) {
-                                const trackNumber = startIndex + i + 1;
-                                const soundName = `${this.instrumentDirName}_track${trackNumber}`;
-                                this.instrumentSoundPlayer.playSound(soundName);
-                            }
-                        }
-                        else {
-                            for (let i = 0; i < numSoundsToPlay; i++) {
-                                const trackNumber = (i % availableTracks) + 1;
-                                const soundName = `${this.instrumentDirName}_track${trackNumber}`;
-                                this.instrumentSoundPlayer.playSound(soundName);
-                            }
-                        }
-                    }
-                    else if (this.instrumentName === 'ギター') {
+                    if (this.instrumentName === 'ギター') {
                         const trackNumber = Math.floor(Math.random() * KEYBOARD_INSTRUMENT_CONFIG[this.instrumentName].maxChord);
-                        
                         if (trackNumber >= 0 && trackNumber < KEYBOARD_INSTRUMENT_CONFIG[this.instrumentName].maxChord) {
                             const soundName = `${this.instrumentDirName}_track${trackNumber + 1}`;
                             this.instrumentSoundPlayer.playSound(soundName);
                         }
-                    }
-                    else {
+                    } else {
+                        // 押されたキーのインデックスに対応するトラックを再生（ピアノ含む全楽器共通）
                         requiredKeys.forEach(key => {
                             const instrumentConfig = KEYBOARD_INSTRUMENT_CONFIG[this.instrumentName];
                             const keyIndex = instrumentConfig.keys.indexOf(key);
