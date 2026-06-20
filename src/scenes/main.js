@@ -14,7 +14,7 @@ export class MainScene {
         this.logoImage = new Image();
         this.logoImage.src = 'assets/img/logo.png';
         this.isLogoLoaded = false;
-        this.logoImage.onload = () => { this.isLogoLoaded = true; };
+        this.logoImage.onload = () => { this.isLogoLoaded = true; this.onResize(); };
 
         this.logoX = 0;
         this.logoY = 0;
