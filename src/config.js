@@ -1,5 +1,3 @@
-export const CACHE_NAME = 'okerun-cache-v4'; // キャッシュ名を定義
-
 export const SCENE = {
     MAIN: 'main',
     GAME_DESCRIPTION: 'game_description',

@@ -16,10 +16,8 @@ export class InputHandler {
         const activateOnce = () => {
             this.activated = true;
             window.removeEventListener('mousedown', activateOnce);
-            window.removeEventListener('touchstart', activateOnce);
         };
         window.addEventListener('mousedown', activateOnce);
-        window.addEventListener('touchstart', activateOnce);
 
         window.addEventListener('keydown', this.handleKeyDown.bind(this));
         window.addEventListener('keyup', this.handleKeyUp.bind(this));
