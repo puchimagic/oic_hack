@@ -117,8 +117,7 @@ export class GameScene {
             console.error(`楽器画像の読み込みに失敗しました: ${this.instrumentName}`);
         };
 
-        this.loadInstrumentSounds(); // 楽器の音源をロード
-        soundPlayer.playBGM('game_bgm');
+        this.loadInstrumentSounds();
     }
 
     // 楽器の音源をロードするメソッド

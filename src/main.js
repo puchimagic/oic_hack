@@ -33,7 +33,7 @@ class Game {
 
         this.scenes = {};
         this.currentScene = null;
-        this.mouse = { x: 0, y: 0, clicked: false, isDown: false }; // isDown を追加
+        this.mouse = { x: 0, y: 0, clicked: false, isDown: false };
         this.isGameActive = false;
 
         this.scoreManager = new ScoreManager(this);
@@ -162,13 +162,10 @@ class Game {
             this.currentScene.destroy();
         }
 
-        if (this.isGameActive) {
-            const targetBGM = SCENE_BGM_MAP[sceneName];
-            if (targetBGM) {
-                soundPlayer.playBGM(targetBGM);
-            } else {
-                soundPlayer.stopBGM();
-            }
+        soundPlayer.stopAllSounds();
+        const targetBGM = SCENE_BGM_MAP[sceneName];
+        if (targetBGM) {
+            soundPlayer.playBGM(targetBGM);
         }
 
         if (sceneName === SCENE.GAME) {
