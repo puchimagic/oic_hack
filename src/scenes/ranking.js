@@ -9,11 +9,11 @@ export class RankingScene {
 
         // 背景画像
         this.backgroundImage = new Image();
-        this.backgroundImage.src = 'img/title_rank_select.png';
+        this.backgroundImage.src = 'assets/img/bg_title.png';
         this.isBackgroundLoaded = false;
         this.backgroundImage.onload = () => { this.isBackgroundLoaded = true; };
         this.backgroundImage.onerror = () => {
-            console.error('背景画像の読み込みに失敗しました: img/title_rank_select.png');
+            console.error('背景画像の読み込みに失敗しました: assets/img/bg_title.png');
         };
 
         this.rankingDisplayArea = { x: 0, y: 0, width: 0, height: 0 };

@@ -1,5 +1,5 @@
 import { BLOCK_SIZE, PLATFORM_HEIGHT_IN_BLOCKS, PLAYER_MAX_JUMP_IN_BLOCKS, INITIAL_SCROLL_SPEED, STUMP_WIDTH_IN_BLOCKS } from './config.js';
-import { soundPlayer } from '../soundPlayer.js';
+import { soundPlayer } from './soundPlayer.js';
 
 const STUMP_HEIGHT_IN_BLOCKS = 4.4;
 
@@ -177,18 +177,18 @@ export class Stage {
         this.scrollSpeed = INITIAL_SCROLL_SPEED;
         this.elapsedTimeInSeconds = 0;
         this.animations = [];
-        this.groundImage = new Image(); this.groundImage.src = 'img/ground.png';
-        this.enemyImage = new Image(); this.enemyImage.src = 'img/teki.png';
-        this.playerWaitImage = new Image(); this.playerWaitImage.src = 'img/character_wait.png';
-        this.playerJumpImage = new Image(); this.playerJumpImage.src = 'img/character_jump.png';
-        this.playerWalkImage = new Image(); this.playerWalkImage.src = 'img/character_woke.png';
-        this.playerWalkImage2 = new Image(); this.playerWalkImage2.src = 'img/character_woke2.png';
-        this.treeImage = new Image(); this.treeImage.src = 'img/ki.png';
-        this.stumpImage = new Image(); this.stumpImage.src = 'img/kirikabu.png';
+        this.groundImage = new Image(); this.groundImage.src = 'assets/img/ground.png';
+        this.enemyImage = new Image(); this.enemyImage.src = 'assets/img/enemy.png';
+        this.playerWaitImage = new Image(); this.playerWaitImage.src = 'assets/img/character_wait.png';
+        this.playerJumpImage = new Image(); this.playerJumpImage.src = 'assets/img/character_jump.png';
+        this.playerWalkImage = new Image(); this.playerWalkImage.src = 'assets/img/character_woke.png';
+        this.playerWalkImage2 = new Image(); this.playerWalkImage2.src = 'assets/img/character_woke2.png';
+        this.treeImage = new Image(); this.treeImage.src = 'assets/img/tree.png';
+        this.stumpImage = new Image(); this.stumpImage.src = 'assets/img/stump.png';
         this.treeFallImages = [];
         for (let i = 2; i <= 4; i++) {
             const img = new Image();
-            img.src = `img/ki${i}.png`;
+            img.src = `assets/img/tree${i}.png`;
             this.treeFallImages.push(img);
         }
     }

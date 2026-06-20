@@ -2,7 +2,7 @@ import { SCENE, FONT_SIZE, FONT_FAMILY, CACHE_NAME } from '../config.js';
 import { assetsToCache } from '../asset_list.js';
 import { Button } from '../ui/button.js';
 import { InputHandler } from '../input_handler.js';
-import { soundPlayer } from '../../soundPlayer.js';
+import { soundPlayer } from '../soundPlayer.js';
 
 export class MainScene {
     constructor(game) {
@@ -10,12 +10,12 @@ export class MainScene {
         this.inputHandler = this.game.inputHandler;
 
         this.backgroundImage = new Image();
-        this.backgroundImage.src = 'img/title_rank_select.png';
+        this.backgroundImage.src = 'assets/img/bg_title.png';
         this.isBackgroundLoaded = false;
         this.backgroundImage.onload = () => { this.isBackgroundLoaded = true; };
 
         this.logoImage = new Image();
-        this.logoImage.src = 'img/logo.png';
+        this.logoImage.src = 'assets/img/logo.png';
         this.isLogoLoaded = false;
         this.logoImage.onload = () => { this.isLogoLoaded = true; };
 

@@ -8,7 +8,7 @@ import { GameOverScene } from './scenes/game_over.js';
 import { SettingsScene } from './scenes/settings.js'; // VolumeSettingsScene を SettingsScene に変更
 import { ScoreManager } from './score_manager.js';
 import { InputHandler } from './input_handler.js';
-import { soundPlayer } from '../soundPlayer.js';
+import { soundPlayer } from './soundPlayer.js';
 
 const SCENE_BGM_MAP = {
     [SCENE.MAIN]: 'home_bgm',

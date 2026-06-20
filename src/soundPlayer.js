@@ -1,4 +1,4 @@
-import { INSTRUMENT_ORDER, INSTRUMENT_FOLDER_MAP } from './js/config.js';
+import { INSTRUMENT_ORDER, INSTRUMENT_FOLDER_MAP } from './config.js';
 
 export class SoundPlayer {
   constructor() {
@@ -13,13 +13,13 @@ export class SoundPlayer {
     this.gameSoundVolume = storedGameSoundVolume !== null ? parseFloat(storedGameSoundVolume) : 0.7;
 
     this.gameSounds = {
-      jump: new Audio("./sound/game/jump.wav"), // ファイル名を変更
-      score: new Audio("./sound/game/click.wav"), // ファイル名を変更
-      gameOver: new Audio("./sound/game/gameOver.wav"), // ファイル名を変更
-      game_bgm: new Audio("./sound/game/game_bgm.wav"),
-      gameover_bgm: new Audio("./sound/game/gameover_bgm.wav"),
-      home_bgm: new Audio("./sound/game/home_bgm.wav"),
-      tree_fall: new Audio("./sound/game/tree_fall.wav"), // ファイル名を変更
+      jump: new Audio("./assets/sound/game/jump.wav"),
+      score: new Audio("./assets/sound/game/click.wav"),
+      gameOver: new Audio("./assets/sound/game/gameOver.wav"),
+      game_bgm: new Audio("./assets/sound/game/game_bgm.wav"),
+      gameover_bgm: new Audio("./assets/sound/game/gameover_bgm.wav"),
+      home_bgm: new Audio("./assets/sound/game/home_bgm.wav"),
+      tree_fall: new Audio("./assets/sound/game/tree_fall.wav"),
     };
     
     // 各音量の設定 (localStorageから読み込んだ値を適用)
@@ -46,7 +46,7 @@ export class SoundPlayer {
       // INSTRUMENT_FOLDER_MAP を使用して正しいフォルダ名を取得
       const folderName = INSTRUMENT_FOLDER_MAP[instrumentName];
       if (folderName) { // マッピングが存在する場合のみロード
-        const soundPath = `./sound/${folderName}/track01.wav`;
+        const soundPath = `./assets/sound/${folderName}/track01.wav`;
         this.loadSound(`${instrumentName}_track01`, soundPath);
       } else {
         console.warn(`楽器名 "${instrumentName}" に対応するフォルダ名が見つかりません。`);

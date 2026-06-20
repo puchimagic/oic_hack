@@ -1,7 +1,7 @@
 import { SCENE, FONT_SIZE, FONT_FAMILY } from '../config.js';
 import { Button } from '../ui/button.js';
 import { VolumeSlider } from '../ui/volume_slider.js';
-import { soundPlayer } from '../../soundPlayer.js';
+import { soundPlayer } from '../soundPlayer.js';
 
 export class SettingsScene {
     constructor(game) {
@@ -24,7 +24,7 @@ export class SettingsScene {
 
     init() {
         this.backgroundImage = new Image();
-        this.backgroundImage.src = 'img/title_rank_select.png';
+        this.backgroundImage.src = 'assets/img/bg_title.png';
         this.isBackgroundLoaded = false;
         this.backgroundImage.onload = () => { this.isBackgroundLoaded = true; };
 

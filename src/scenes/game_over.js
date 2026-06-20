@@ -9,13 +9,13 @@ export class GameOverScene {
 
          // 背景画像を読み込む
         this.backgroundImage = new Image();
-        this.backgroundImage.src = 'img/gameover.png';
+        this.backgroundImage.src = 'assets/img/bg_gameover.png';
         this.isBackgroundLoaded = false;
         this.backgroundImage.onload = () => {
             this.isBackgroundLoaded = true;
         };
         this.backgroundImage.onerror = () => {
-            console.error('背景画像の読み込みに失敗しました: img/gameover.png');
+            console.error('背景画像の読み込みに失敗しました: assets/img/bg_gameover.png');
         };
     }
 

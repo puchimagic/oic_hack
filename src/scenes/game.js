@@ -9,7 +9,7 @@ import { Player } from '../player.js';
 import { Stage, Tree } from '../stage.js'; 
 import { ScaffoldBlock } from '../scaffold.js';
 import { InputHandler } from '../input_handler.js';
-import { SoundPlayer, soundPlayer } from '../../soundPlayer.js';
+import { SoundPlayer, soundPlayer } from '../soundPlayer.js';
 
 export class GameScene {
     constructor(game, selectedInstrument) {
@@ -35,13 +35,13 @@ export class GameScene {
 
         // 背景画像を読み込む
         this.backgroundImage = new Image();
-        this.backgroundImage.src = 'img/mein.png';
+        this.backgroundImage.src = 'assets/img/bg_game.png';
         this.isBackgroundLoaded = false;
         this.backgroundImage.onload = () => {
             this.isBackgroundLoaded = true;
         };
         this.backgroundImage.onerror = () => {
-            console.error('背景画像の読み込みに失敗しました: img/mein.png');
+            console.error('背景画像の読み込みに失敗しました: assets/img/bg_game.png');
         };
 
         // 楽器アイコン画像用
@@ -99,12 +99,12 @@ export class GameScene {
 
         // 楽器名ごとに対応する画像URLをマッピング
         const instrumentImageMap = {
-            "トライアングル": "https://github.com/puchimagic/oic_hack/blob/main/img/toraianguru.png?raw=true",
-            "タンバリン": "https://github.com/puchimagic/oic_hack/blob/main/img/tanbarin.png?raw=true",
-            "太鼓": "https://github.com/puchimagic/oic_hack/blob/main/img/taiko.png?raw=true",
-            "ドラム": "https://github.com/puchimagic/oic_hack/blob/main/img/doramu.png?raw=true",
-            "ピアノ": "https://github.com/puchimagic/oic_hack/blob/main/img/piano.png?raw=true",
-            "ギター": "https://github.com/puchimagic/oic_hack/blob/main/img/gita.png?raw=true"
+            "トライアングル": "assets/img/instrument_triangle.png",
+            "タンバリン": "assets/img/instrument_tambourine.png",
+            "太鼓": "assets/img/instrument_taiko.png",
+            "ドラム": "assets/img/instrument_drum.png",
+            "ピアノ": "assets/img/instrument_piano.png",
+            "ギター": "assets/img/gita.png"
         };
 
         // 楽器アイコンをロード
@@ -141,14 +141,14 @@ export class GameScene {
             // ギターの場合、maxChordの数だけ音源をロード
             for (let i = 0; i < instrumentConfig.maxChord; i++) {
                 const soundName = `${this.instrumentDirName}_track${i + 1}`;
-                const soundPath = `sound/${this.instrumentDirName}/track0${i + 1}.wav`;
+                const soundPath = `assets/sound/${this.instrumentDirName}/track0${i + 1}.wav`;
                 this.instrumentSoundPlayer.loadSound(soundName, soundPath, volumeMultiplier);
             }
         } else {
             // その他の楽器の場合 (既存のロジック)
             instrumentConfig.keys.forEach((key, index) => {
                 const soundName = `${this.instrumentDirName}_track${index + 1}`;
-                const soundPath = `sound/${this.instrumentDirName}/track0${index + 1}.wav`;
+                const soundPath = `assets/sound/${this.instrumentDirName}/track0${index + 1}.wav`;
                 this.instrumentSoundPlayer.loadSound(soundName, soundPath, volumeMultiplier);
             });
         }

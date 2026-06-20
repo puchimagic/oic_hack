@@ -8,13 +8,13 @@ export class InstrumentSelectScene {
 
          // 背景画像を読み込む
         this.backgroundImage = new Image();
-        this.backgroundImage.src = 'img/title_rank_select.png';
+        this.backgroundImage.src = 'assets/img/bg_title.png';
         this.isBackgroundLoaded = false;
         this.backgroundImage.onload = () => {
             this.isBackgroundLoaded = true;
         };
         this.backgroundImage.onerror = () => {
-            console.error('背景画像の読み込みに失敗しました: img/title_rank_select.png');
+            console.error('背景画像の読み込みに失敗しました: assets/img/bg_title.png');
         };
     }
 

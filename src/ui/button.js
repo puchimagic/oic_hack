@@ -1,5 +1,5 @@
 import { FONT_SIZE, FONT_FAMILY, SELECTED_BUTTON_COLOR, SELECTED_BUTTON_HOVER_COLOR, DEFAULT_BUTTON_COLOR, DEFAULT_BUTTON_HOVER_COLOR } from '../config.js';
-import { soundPlayer } from '../../soundPlayer.js';
+import { soundPlayer } from '../soundPlayer.js';
 
 export class Button {
     constructor(x, y, width, height, text, color = DEFAULT_BUTTON_COLOR, hoverColor = DEFAULT_BUTTON_HOVER_COLOR, clickSoundKey = "score", clickSoundType = "gameSound") {

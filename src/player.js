@@ -1,5 +1,5 @@
 import { BLOCK_SIZE, STUMP_WIDTH_IN_BLOCKS, PLATFORM_HEIGHT_IN_BLOCKS, PLAYER_INITIAL_SPEED, PLAYER_SPEED_INCREASE_RATE, INITIAL_SCROLL_SPEED } from './config.js'; // STUMP_WIDTH_IN_BLOCKSをインポート
-import { soundPlayer } from "../soundPlayer.js";
+import { soundPlayer } from "./soundPlayer.js";
 
 const PLAYER_WIDTH_IN_BLOCKS = 2.0;
 const PLAYER_HEIGHT_IN_BLOCKS = 2.5;

@@ -2,7 +2,7 @@ import { FONT_FAMILY, BLOCK_SIZE, SCAFFOLD_ACTIVE_STROKE_COLOR, SCAFFOLD_ACTIVE_
 
 const SOLID_DURATION = 5000;
 const scaffoldImage = new Image();
-scaffoldImage.src = 'img/gakufu.png';
+scaffoldImage.src = 'assets/img/scaffold.png';
 
 export class ScaffoldBlock {
     constructor(x, y, widthInBlocks, heightInBlocks, requiredKeys) {
